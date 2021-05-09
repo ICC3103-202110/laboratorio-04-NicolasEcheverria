@@ -2,10 +2,10 @@ var prompt = require('prompt-sync')();
 
 
 
-const showMenu = (estado)=>{
+const showMenu = (state)=>{
     console.clear();
     let Interface =[
-        "Actual number: "+estado,
+        "Actual number: "+state,
         " ",
         "(+)/(-):+-1",
         "(any other key):exit"
@@ -13,18 +13,18 @@ const showMenu = (estado)=>{
     ].join("\n");
     console.log(Interface)
 
-    let alteracion = prompt();
-    return alteracion;
+    let alteration = prompt();
+    return alteration;
 
 }
 
 
 
-const contador = (estado)=>{
+const count = (state)=>{
     console.clear();
-    let menu = showMenu(estado);
+    let menu = showMenu(state);
     
-    let nActual = Number(estado);
+    let nActual = Number(state);
         
     let alt =String(menu);
     if (alt==="+"){
@@ -32,7 +32,7 @@ const contador = (estado)=>{
             
         nActual+=1
         
-        n=contador(nActual);
+        n=count(nActual);
         return n;
     }else if (alt==="-"){
         
@@ -40,19 +40,19 @@ const contador = (estado)=>{
        
         nActual-=1
         
-        n=contador(nActual)
+        n=count(nActual)
         return n;
 
 
     }else {
     
-        return `fin,contador final = ${estado}`;
+        return `end, final number = ${state}`;
     }
 
 
 }
 
-console.log(contador(0))
+console.log(count(0))
 
 
 
